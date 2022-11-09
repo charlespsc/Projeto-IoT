@@ -1,0 +1,61 @@
+[
+    {
+        "id": "3609b4802ae54ce1",
+        "type": "tab",
+        "label": "Aula1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "37a782c81cde9ab8",
+        "type": "inject",
+        "z": "3609b4802ae54ce1",
+        "name": "Programa X",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "canal",
+                "v": "Senai SC",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 100,
+        "wires": [
+            [
+                "bccacb985fa2fc28"
+            ]
+        ]
+    },
+    {
+        "id": "bccacb985fa2fc28",
+        "type": "debug",
+        "z": "3609b4802ae54ce1",
+        "name": "Mensagem",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 390,
+        "y": 160,
+        "wires": []
+    }
+]
