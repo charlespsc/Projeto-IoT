@@ -1,0 +1,80 @@
+[
+    {
+        "id": "b0dc4e26ba8d58bc",
+        "type": "tab",
+        "label": "Function",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "db0c29c684438d59",
+        "type": "inject",
+        "z": "b0dc4e26ba8d58bc",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "canal",
+                "v": "Senai-SC",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 100,
+        "wires": [
+            [
+                "5fcf6fbc3509b19f"
+            ]
+        ]
+    },
+    {
+        "id": "c4747d192e3ff779",
+        "type": "debug",
+        "z": "b0dc4e26ba8d58bc",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "5fcf6fbc3509b19f",
+        "type": "function",
+        "z": "b0dc4e26ba8d58bc",
+        "name": "function 1",
+        "func": "let data = new Date(msg.payload)\nmsg.topic = data.toString()\nlet num = Math.random()*10\nmsg.canal = num\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 100,
+        "wires": [
+            [
+                "c4747d192e3ff779"
+            ]
+        ]
+    }
+]
