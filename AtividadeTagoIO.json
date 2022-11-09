@@ -1,0 +1,16 @@
+[
+    {
+      "variable": "ai1",
+      "value": 1.5
+    },
+  
+    {
+        "variable": "ai4",
+        "value": 23
+    },
+  
+    {
+        "variable": "alarme",
+        "value": true
+    } 
+]
