@@ -1,0 +1,97 @@
+[
+    {
+        "id": "b0dc4e26ba8d58bc",
+        "type": "tab",
+        "label": "Function",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "db0c29c684438d59",
+        "type": "inject",
+        "z": "b0dc4e26ba8d58bc",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "canal",
+                "v": "Senai-SC",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 80,
+        "wires": [
+            [
+                "2e6428a913f182bc"
+            ]
+        ]
+    },
+    {
+        "id": "c4747d192e3ff779",
+        "type": "debug",
+        "z": "b0dc4e26ba8d58bc",
+        "name": "msg",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 610,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "5fcf6fbc3509b19f",
+        "type": "function",
+        "z": "b0dc4e26ba8d58bc",
+        "name": "function 1",
+        "func": "let data = new Date(msg.payload)\nmsg.topic = data.toString()\n//msg.canal = Math.random()*10\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 180,
+        "wires": [
+            [
+                "c4747d192e3ff779"
+            ]
+        ]
+    },
+    {
+        "id": "2e6428a913f182bc",
+        "type": "random",
+        "z": "b0dc4e26ba8d58bc",
+        "name": "sorteio",
+        "low": "0",
+        "high": "50",
+        "inte": "true",
+        "property": "canal",
+        "x": 270,
+        "y": 180,
+        "wires": [
+            [
+                "5fcf6fbc3509b19f"
+            ]
+        ]
+    }
+]
